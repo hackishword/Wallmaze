@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'haml'
 # User paperclip for handling images
 gem 'paperclip', '4.2'
+# Use SimpleForm for forms
+gem 'simple_form', '~> 3.1.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
