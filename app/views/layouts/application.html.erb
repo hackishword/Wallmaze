@@ -8,11 +8,7 @@
 </head>
 <body>
 <%= render "layouts/app" %>
-<% if !flash[:notice].nil? %>
-<div class="alert alert-success success" >
-  <%= flash[:notice] %>
-</div>
-<% end %>
+
 <%= yield %>
 
 </body>
