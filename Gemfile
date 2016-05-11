@@ -3,8 +3,9 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use sqlite3 as the database for Active Record in dev, pg for production
+gem 'sqlite3', group: :development
+gem 'pg', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -18,7 +19,7 @@ gem 'paperclip', '4.2'
 # Use SimpleForm for forms
 gem 'simple_form', '~> 3.1.0'
 # Use Bootstrap Sass for CSS
-gem 'bootstrap-sass', '~> 3.3.5' 
+gem 'bootstrap-sass', '~> 3.3.5'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
@@ -46,3 +47,5 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'rails_12factor', group: :production
