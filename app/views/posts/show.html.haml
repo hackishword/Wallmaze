@@ -2,12 +2,12 @@
   .post
     .post-head
       .name
-        Tomahawk
+        = @post.user.try(:user_name) || "Anonymous"
     .image.center-block
       = image_tag(@post.image.url(:medium), class:'img-responsive')
       %p.caption
         =@post.caption
       .text-center
         =link_to "Back", posts_path
-
-        =link_to "Edit Post", edit_post_path(@post)
+        -if @post.user.try(:id) == current_user.id
+          =link_to "Edit Post", edit_post_path(@post)
