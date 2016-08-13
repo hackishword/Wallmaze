@@ -19,7 +19,7 @@
             = render post.comments, post: post
     .comment-like-form.row
       .like-button.col-sm-1
-        %span(class="glyphicon glyphyicon-heart-empty")
+        %span(class="glyphicon glyphicon-asterisk")
       .comment-form.col-sm-11
         = form_for([post, post.comments.build], remote: true) do |f|
           = f.text_field :content, placeholder: "Add a comment ... ", class: "comment-content", id: "comment_content_#{post.id}"
