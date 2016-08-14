@@ -201,3 +201,13 @@ html {
 .alert {
   margin-bottom: 0px;
 }
+
+.session-bg {
+  padding-top: 4em;
+  height: 1000px;
+  background-image: image_url("petals.jpg");
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
