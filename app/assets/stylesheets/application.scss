@@ -16,6 +16,9 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+html {
+  height: 100%;
+}
 
  body {
    background-color: #fafafa;
@@ -158,4 +161,25 @@
 .edit-links {
   margin-top: 20px;
   margin-bottom: 40px;
+}
+
+/* Styling the registration
+* See page 89
+*
+*/
+.registration-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image_url("neatbackground.jpg");
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.log-in {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border: none;
 }
