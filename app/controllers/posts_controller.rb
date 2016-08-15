@@ -6,6 +6,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order('created_at DESC').page params[:page]
+    respond_to do |format|
+      format.html
+      format.js { return "alert('rock!')" }
+    end
   end
 
   def new
