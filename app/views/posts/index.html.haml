@@ -1,4 +1,5 @@
 
 .posts-wrapper.row
+  = paginate @posts
   -@posts.each do |post|
     = render 'post', post: post
