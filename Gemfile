@@ -53,3 +53,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails_12factor', group: :production
+gem 'kaminari', '~> 0.16.3'
