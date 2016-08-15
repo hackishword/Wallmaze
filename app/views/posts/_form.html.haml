@@ -2,7 +2,8 @@
   .post
     .post-body
       .image-wrap
-        = image_tag "placeholder.jpg", id: "image-preview", class: "img-responsive"
+        - imgsrc = @post.image.nil? ? "placeholder.jpg" : @post.image.url(:medium).to_s
+        = image_tag imgsrc, id: "image-preview", class: "img-responsive"
         = simple_form_for @post, html: { multipart: true } do |f|
           .row
             .col-md-12.text-center
@@ -15,5 +16,3 @@
                 = f.input :caption, label: false, placeholder: 'Add your caption'
               .form-group.text-center
                 = f.button :submit, class: "btn-success btn-block"
-
-        
