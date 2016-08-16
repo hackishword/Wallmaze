@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('.more-comments').click(function() {
-    alert("aye aye, more comments soon...");
+    // alert("aye aye, more comments soon...");
     $(this).on('ajax:success', function(event, data, status, xhr) {
       var postId = $(this).data("post-id");
       $("#comments_" + postId).html(data);

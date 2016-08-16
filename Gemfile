@@ -54,3 +54,4 @@ gem 'spring',        group: :development
 
 gem 'rails_12factor', group: :production
 gem 'kaminari', '~> 0.16.3'
+gem 'jquery-turbolinks'
