@@ -1,9 +1,9 @@
 class ProfilesController < ApplicationController
+  before_action :set_user
   before_action :authenticate_user!
   before_action :owned_profile, only: [:edit, :update]
 
   def show
-    @user = User.find_by(user_name: params[:user_name])
     @posts = @user.posts.order('created_at DESC').page params[:page]
     respond_to do |format|
       format.html
@@ -12,11 +12,9 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(user_name: params[:user_name])
   end
 
   def update
-    @user = User.find_by(user_name: params[:user_name])
     if @user.update(profile_params)
       flash[:success] = "Your profile has been updated."
       redirect_to profile_path(@user.user_name)
@@ -39,6 +37,10 @@ class ProfilesController < ApplicationController
       flash[:alert] = "That profile does not belong to you!"
       redirect_to root_path
     end
+  end
+
+  def set_user
+    @user = User.find_by(user_name: params[:user_name])
   end
 
 end
