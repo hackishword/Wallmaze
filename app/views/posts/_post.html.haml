@@ -12,7 +12,7 @@
       .caption
         .caption-content
           .user-name
-            = post.user.try(:user_name) || "Anonymous"
+            = link_to post.user.try(:user_name) || "Anonymous", profile_path(post.user.try(:user_name))
           = post.caption
         .comments{id: "comments_#{post.id}"}
           - if post.comments.any?

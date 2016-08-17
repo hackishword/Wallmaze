@@ -1,6 +1,6 @@
 #comment
   .user-name
-    = comment.user.try(:user_name) || "Anonymous"
+    = link_to comment.user.try(:user_name) || "Anonymous", profile_path(comment.user.try(:user_name))
   .comment-content
     = comment.content
   - if comment.user == current_user
