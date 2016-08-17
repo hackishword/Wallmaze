@@ -3,7 +3,7 @@
     .post-head
       .thumb-img
       .user-name
-        = post.user.try(:user_name) || "Anonymous"
+        = link_to post.user.try(:user_name) || "Anonymous", profile_path(post.user.user_name)
       .time-ago
         = " ago".prepend time_ago_in_words(post.created_at)
     .image.center-block
