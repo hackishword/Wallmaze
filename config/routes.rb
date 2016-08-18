@@ -58,6 +58,9 @@ Rails.application.routes.draw do
   #   end
   resources :posts do
     resources :comments
+    member do
+      get 'like'
+    end
   end
   root "posts#index"
   get ':user_name', to: 'profiles#show', as: :profile

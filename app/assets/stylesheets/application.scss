@@ -196,6 +196,15 @@ html {
   }
 }
 
+#image-preview {
+  margin: 0 auto;
+}
+
+#post_image {
+  padding: 1em;
+  margin: 0px auto;
+}
+
 .navbar {
   margin-bottom: 0px;
 }
@@ -293,4 +302,24 @@ html {
 
 .profile-bio {
   margin-top: 20px;
+}
+
+.comment-submit-button {
+  position: absolute;
+  left: -9999px;
+}
+
+#user-bio {
+  border: 1px solid gray;
+}
+
+#user_avatar {
+  padding: 1em;
+  margin: 0px auto;
+
+}
+
+.likes {
+  margin-top: 20px;
+  margin-bottom: 7px;
 }
