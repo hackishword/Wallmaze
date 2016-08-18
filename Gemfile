@@ -58,3 +58,5 @@ gem 'jquery-turbolinks'
 # use font awesome
 gem 'font-awesome-sass'
 gem 'acts_as_votable', '~> 0.10.0'
+# foreigner adds foreign keys to databases
+gem 'foreigner'

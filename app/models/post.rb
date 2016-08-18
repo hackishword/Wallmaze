@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   acts_as_votable
-  
+
   validates :image, presence: true
   validates :user_id, presence: true
   validates :caption, length: { minimum: 3, maximum: 100 }
@@ -10,4 +10,5 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 end
