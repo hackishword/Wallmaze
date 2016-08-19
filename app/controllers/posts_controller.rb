@@ -39,6 +39,7 @@ class PostsController < ApplicationController
     end
 
     if @post.liked_by current_user
+      create_notification(@post)
       respond_to do |format|
         format.html { redirect_to :back }
         format.js
@@ -86,6 +87,11 @@ class PostsController < ApplicationController
       flash[:error] = "You do not have permission to do that."
       redirect_to root_path
     end
+  end
+
+  def create_notification(post)
+    return if post.user.id == current_user.id
+    Notification.create(user_id: post.user.id, notified_by_id: current_user.id, post_id: post.id, identifier: post.id, notice_type: 'like')
   end
 
 end

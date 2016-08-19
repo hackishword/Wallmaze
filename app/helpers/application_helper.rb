@@ -13,4 +13,17 @@ module ApplicationHelper
     return image_tag user.avatar.url(:medium), id: 'image-preview', class: 'img-responsive img-circle profile-image' if user.avatar.exists?
     image_tag 'default-avatar.jpg', id: 'image-preview', class: 'img-responsive img-circle profile-image'
   end
+
+  def notifier(notification)
+    commenter = User.find(notification.notified_by_id)
+    commenter.user_name
+  end
+
+  def notification_past(notification)
+    if notification.notice_type == "comment"
+      "commented on"
+    else
+      "liked"
+    end
+  end
 end
