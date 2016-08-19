@@ -1,0 +1,3 @@
+$("#unfollow-button").removeClass("unfollow-button").addClass("follow-button");
+$("#unfollow-button").attr("href", "<%= escape_javascript(follow_link_path(@other_user)) %>");
+$("#unfollow-button").html("<%= escape_javascript(follow_button_text(@other_user)) %>");
