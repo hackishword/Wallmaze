@@ -69,6 +69,9 @@ Rails.application.routes.draw do
       get 'like'
       get 'unlike'
     end
+    collection do
+      get 'browse'
+    end
   end
   root "posts#index"
   get ':user_name', to: 'profiles#show', as: :profile
