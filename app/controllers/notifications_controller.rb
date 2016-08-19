@@ -4,4 +4,8 @@ class NotificationsController < ApplicationController
     @notification.update read: true
     redirect_to post_path(@notification.post)
   end
+
+  def index
+    @notifications = current_user.notifications.where(read: false).order('created_at DESC')
+  end
 end

@@ -9,3 +9,5 @@
         %a{:href => "/"} No new notifications
     - current_user.notifications.where(read: false).order('created_at DESC').last(5).each do |notification|
       = render "notifications/notification", notification: notification
+    %li.divider{ role: 'separator'}
+      %li.text-center= link_to "View All", notifications_path
